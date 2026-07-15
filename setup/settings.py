@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    
+
     # Meus apps
     'portfolio',
     'tinymce',
@@ -110,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
@@ -148,7 +150,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Painel de Controle",
     "welcome_sign": "Bem-vindo à plataforma de gerência",
     "copyright": "Caio Murilo",
-    
+
     # Adiciona links no menu superior
     "topmenu_links": [
         {"name": "Início",  "url": "admin:index", "permissions": ["auth.view_user"]},
@@ -168,11 +170,11 @@ JAZZMIN_SETTINGS = {
         "portfolio.HomeSection": "fas fa-layer-group",
         "portfolio.Page": "fas fa-file-alt",
     },
-    
+
     "order_with_respect_to": ["portfolio", "auth"],
-    
-    # Desligamos a engrenagem (UI Builder) pois o layout já está definido
-    "show_ui_builder": False, 
+
+    # Desliga a engrenagem (UI Builder) pois o layout já está definido
+    "show_ui_builder": False,
 }
 
 # ==========================================
@@ -180,7 +182,7 @@ JAZZMIN_SETTINGS = {
 # ==========================================
 JAZZMIN_UI_TWEAKS = {
     "navbar": "navbar-dark",
-    "theme": "darkly", # Mantém o dark mode base
+    "theme": "default", # altera o tema da página
     "sidebar": "sidebar-dark-primary",
     "sidebar_nav_child_indent": True,
     "sidebar_nav_compact_style": False,
