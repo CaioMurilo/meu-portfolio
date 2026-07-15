@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ profile.name }}</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#09090b',
+                        darkCard: '#18181b',
+                        lightBg: '#f8fafc',
+                        lightCard: '#ffffff',
+                    }
+                }
+            }
+        }
+        
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</head>
+<body class="bg-lightBg text-slate-800 dark:bg-darkBg dark:text-zinc-300 font-sans antialiased transition-colors duration-300 min-h-screen flex flex-col">
+    
+    <nav class="max-w-5xl mx-auto w-full px-6 py-4 flex flex-wrap justify-between items-center border-b border-slate-200 dark:border-zinc-800">
+        <div class="flex gap-4">
+            <a href="/" class="hover:opacity-70 transition">Início</a>
+            <a href="{% url 'projects_list' %}" class="hover:opacity-70 transition">Projetos</a>
+            
+            {% for page in pages %}
+                <a href="{% url 'page_detail' page.slug %}" class="hover:opacity-70 transition">{{ page.title }}</a>
+            {% endfor %}
+        </div>
+        <button onclick="toggleTheme()" class="p-2 rounded-md bg-slate-200 dark:bg-zinc-800 hover:opacity-80 transition flex items-center gap-2 text-sm font-medium">
+            <span class="dark:hidden">🌙 Modo Escuro</span>
+            <span class="hidden dark:inline">☀️ Modo Claro</span>
+        </button>
+    </nav>
+
+    <main class="max-w-3xl mx-auto w-full px-6 py-16 flex-1">
+        <h1 class="text-4xl font-light mb-8 text-slate-900 dark:text-white">{{ page.title }}</h1>
+        <div class="prose dark:prose-invert max-w-none opacity-80 leading-relaxed space-y-4 text-justify">
+            
+            <!-- Usamos o |safe para liberar a leitura das imagens e formatações -->
+            {{ page.content|safe }}
+            
+        </div>
+    </main>
+
+    <footer class="text-center py-8 border-t border-slate-200 dark:border-zinc-900 text-xs opacity-40">
+        &copy; 2026 {{ profile.name }}.
+    </footer>
+</body>
+</html>
