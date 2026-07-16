@@ -98,8 +98,7 @@ Se voce deseja clonar e testar o projeto na sua maquina, siga os passos abaixo:
 
 ## Autor
 
-Caio Murilo Silva de Oliveira
- Estudante de Engenharia de Software
+Caio Murilo Silva de Oliveira | Estudante de Engenharia de Software
 
 - LinkedIn: https://linkedin.com/in/murilocaiomurilo/
 - Portfolio Online: https://caiomurilo.pythonanywhere.com
