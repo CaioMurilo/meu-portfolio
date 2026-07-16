@@ -53,39 +53,53 @@ Se voce deseja clonar e testar o projeto na sua maquina, siga os passos abaixo:
 ### Passo a passo
 
 1. Clone o repositorio:
-    git clone https://github.com/SEU_USUARIO/meu-portfolio.git
+```text
+   git clone https://github.com/SEU_USUARIO/meu-portfolio.git
     cd meu-portfolio
+```
 
-2. Crie e ative o ambiente virtual:
+3. Crie e ative o ambiente virtual:
+```text
    - Windows:
         python -m venv venv
         venv\Scripts\activate
    - Linux/Mac:
         python3 -m venv venv
         source venv/bin/activate
+```
 
-3. Instale as dependencias:
+4. Instale as dependencias:
+```text
     pip install -r requirements.txt
+```
 
-4. Realize as migracoes do banco de dados:
+5. Realize as migracoes do banco de dados:
+```text
     python manage.py migrate
+```
 
-5. Crie um superusuario para acessar o painel administrativo:
-    python manage.py createsuperuser
+6. Crie um superusuario para acessar o painel administrativo:
+```text
+   python manage.py createsuperuser
+```
 
-6. Inicie o servidor local:
+7. Inicie o servidor local:
+```text
     python manage.py runserver
+```
 
-7. Acesse no navegador:
+8. Acesse no navegador:
+```text
    - Site Publico: http://127.0.0.1:8000/
    - Painel Admin: http://127.0.0.1:8000/admin/
+```
 
 ---
 
 ## Autor
 
 Caio Murilo Silva de Oliveira
-Estudante de Engenharia de Software
+ Estudante de Engenharia de Software
 
 - LinkedIn: https://linkedin.com/in/murilocaiomurilo/
 - Portfolio Online: https://caiomurilo.pythonanywhere.com
